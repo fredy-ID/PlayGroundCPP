@@ -1,0 +1,87 @@
+# Fichiers de configuration spécifiques à l'OS
+.DS_Store # macOS
+Thumbs.db # Windows
+ehthumbs.db # Windows
+Desktop.ini # Windows
+
+# Fichiers et dossiers Visual Studio
+# Fichiers de solution et de projet générés
+*.VC.opendb
+*.VC.db
+*.sdf
+*.suo # Solution User Options - préférences de disposition de l'interface
+*.user # Project User Options
+*.ilk # Incremental Linker File
+*.obj # Object files
+*.pdb # Program Database files (informations de débogage)
+*.ipch # Precompiled Headers cache
+*.aps # Resource Script include file
+*.bsc # Browse Information file
+*.mdf
+*.ldf
+
+# Dossiers de compilation
+[Dd]ebug/ # Dossier de sortie de la configuration Debug
+[Rr]elease/ # Dossier de sortie de la configuration Release
+x64/ # Dossier de sortie si spécifié par l'architecture
+x86/ # Dossier de sortie si spécifié par l'architecture
+ARM/ # Dossier de sortie si spécifié par l'architecture
+build/ # Dossier de build générique
+bin/ # Dossier binaire générique
+out/ # Dossier de sortie générique
+
+# Exécutables, bibliothèques et autres sorties de compilation
+*.exe # Exécutables
+*.dll # Dynamic Link Libraries
+*.lib # Static Link Libraries
+*.exp # Export files
+*.aps
+*.manifest
+*.res
+
+# Fichiers de configuration et temporaires
+*.log
+*.tmp
+*.bak
+*.swp # Fichiers d'échange Vim
+*.vshost.* # Visual Studio Hosting Process files
+*.vspscc # Visual Studio Source Code Control file
+*.vssscc # Visual Studio Source Safe file
+*.pidb
+*.log
+*.plg # Build log file (généré par VC++ 6.0, moins courant maintenant)
+*.tlh
+*.tli
+*.ncb # Intellisense database file (ancien, remplacé par .VC.db)
+
+# Fichiers générés par les outils de profilage ou d'analyse
+*.vsp
+*.vspx
+*.psess
+
+# Fichiers spécifiques aux IDE (Environnements de Développement Intégrés)
+.idea/ # PhpStorm, WebStorm, IntelliJ IDEA (moins courant pour C++)
+.vscode/ # VS Code (peut être inclus si vous partagez des configurations spécifiques)
+*.iml # IntelliJ IDEA
+.project # Eclipse
+.settings/ # Eclipse
+.classpath # Eclipse
+*.sublime-project # Sublime Text
+*.sublime-lime # Sublime Text
+
+# Fichiers de package NuGet
+packages/ # Dossier des packages NuGet (généralement géré via .nuget/packages.config ou les références du projet)
+
+# Fichiers de configuration locale (si vous avez des fichiers non versionnés)
+LocalSettings.xml
+*.userprefs
+
+# Fichiers temporaires des systèmes de contrôle de version (si vous migrez)
+.svn/ # Subversion
+.hg/ # Mercurial
+
+# Fichiers Docker
+.dockerignore
+
+# Ajoutez ici d'autres fichiers ou dossiers spécifiques à votre projet.
+# Par exemple, si vous utilisez des frameworks de test qui génèrent leurs propres fichiers.
