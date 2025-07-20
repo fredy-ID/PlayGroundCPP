@@ -1,0 +1,112 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Fichiers de Visual Studio
+.vs/
+*.opensdf
+*.sdf
+*.suo
+*.user
+*.bak
+*.vcproj.filters
+*.vcxproj.user
+*.vcxproj.filters
+*.sln.docstates
+
+# Fichiers de compilation et de build
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bin/
+obj/
+*.obj
+*.lib
+*.exp
+*.ilk
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.tlog
+*.idb
+*.ipch
+*.log
+*.res
+*.exe
+*.dll
+*.aps
+*.manifest
+*.map
+*.ncb
+*.bsc
+*.sbr
+*.res
+
+# Fichiers de dépendances et de packages (ex: NuGet)
+packages/
+*.nuget.props
+*.nuget.targets
+
+# Fichiers de cache IntelliSense
+.vs/
+*.VC.db
+
+# Fichiers de gestion de packages (si utilisés)
+ipch/
+*.ipch
+*.aps
+*.log
+
+# Fichiers de sauvegarde automatique ou temporaires
+*.~
+*.tmp
+*.temp
+*.bak
+
+# Fichiers de configuration utilisateur pour Visual Studio Code (si utilisés)
+.vscode/
+
+# Fichiers de génération de documentation (ex: Doxygen)
+Docs/
+doc/
+
+# Fichiers du système d'exploitation
+.DS_Store # macOS
+Thumbs.db # Windows
+desktop.ini # Windows
+
+MainBaseSolution/.vs/
+MainBaseSolution/MainBase/x64/
+
