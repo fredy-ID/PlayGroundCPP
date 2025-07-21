@@ -1,85 +1,43 @@
-#include "main.h"
-#include <iostream>
+#include "main.h"          // Inclut le fichier d'en-tête principal
+#include <iostream>        // Pour std::cout, std::cin, std::endl
+#include <string>          // Pour std::string
+#include "FunctionsTest.h" // Inclut la déclaration de la classe FunctionsTest
+
+// Utilisation de l'espace de noms std pour simplifier le code
 using namespace std;
 
-// Classe principale avec des méthodes pour diverses opérations
+// Fonctions prototypes (déclarées ici, définies plus loin dans ce fichier)
+void welcome();
+char getYesNo();
+
+// Classe principale avec des méthodes pour diverses opérations (définie dans main.cpp)
 class Main
 {
 public:
     void afficherHelloWorld() const {
         std::cout << "Hello, World!" << std::endl;
     }
-
-    int intVar = 42;
-    float floatVar = 3.14f;
-    double doubleVar = 2.718281828459045;
-
-    void afficherVariables() const {
-        std::cout << "Variables: " << std::endl;
-        std::cout << "intVar: " << intVar << std::endl;
-        std::cout << "floatVar: " << floatVar << std::endl;
-        std::cout << "doubleVar: " << doubleVar << std::endl;
-    }
-
-    void calculeAddition() const {
-        int a = 5;
-        int b = 10;
-        std::cout << "Entrez un nombre pour 'a' : " << std::endl;
-        std::cin >> a;
-        std::cout << "Entrez un nombre pour 'b' : " << std::endl;
-        std::cin >> b;
-        int result = a + b;
-        std::cout << "Résultat: " << result << std::endl;
-    }
-
-    void calculeSoustraction() const {
-        int a = 5;
-        int b = 10;
-        std::cout << "Entrez un nombre pour 'a' : " << std::endl;
-        std::cin >> a;
-        std::cout << "Entrez un nombre pour 'b' : " << std::endl;
-        std::cin >> b;
-        int result = a - b;
-        std::cout << "Résultat: " << result << std::endl;
-    }
-
-    void youDied() const {
-        std::cout << "You Died!" << std::endl;
-    }
 };
-
-// Affiche un message de bienvenue
-void welcome()
-{
-    cout << "Bienvenue dans le programme Main!" << endl;
-}
-// Affiche un int passé en paramètre
-void afficherInt(int valeur) 
-{
-    std::cout << "Valeur reçue : " << valeur << std::endl;
-}
-
-int add(int a, int b)
-{
-	int result = a + b;
-    return result;
-}
 
 int main()
 {
+    Main M;
+    FunctionsTest F_test; // Instanciation de la classe FunctionsTest
+
+    // Appel de la fonction welcome globale
     welcome();
-	int c;
-	c = add(5, 10);
-	afficherInt(c);
 
-    Main m;
+    // Exemple d'utilisation de FunctionsTest
+    int c;
+    c = F_test.add(5, 10);
+    F_test.afficherInt(c);
 
-    // Décommentez pour exécuter les méthodes
-    // m.afficherHelloWorld();
-    // m.afficherVariables();
-    // m.calculeAddition();
-    // m.calculeSoustraction();
-    // m.youDied();
+    // Décommentez pour exécuter les méthodes de F_test
+    // F_test.welcome(); // Appel de la méthode welcome de FunctionsTest
+    // F_test.afficherVariables();
+    // F_test.calculeAddition();
+    // F_test.calculeSoustraction();
+    // F_test.youDied();
 
     std::cout << "Affichage avec std::cout" << std::endl;
     cout << "Affichage avec cout grâce à 'using namespace std'" << endl;
@@ -107,6 +65,40 @@ int main()
 
     cout << "x: " << x << ", y: " << y << ", message: " << message << endl;
 
-    system("pause");
+    // Appel de la méthode welcome de F_test (maintenant publique)
+    F_test.welcome();
+
+    // Appel de la fonction getYesNo globale
+    char response = getYesNo();
+    // Appel de la surcharge de printMessage de F_test pour un caractère
+    F_test.printMessage(response);
+
+    // system("pause") est spécifique à Windows et n'est pas portable.
+    // Pour une pause portable, vous pouvez demander une entrée utilisateur.
+    cout << "Appuyez sur Entrée pour continuer...";
+    cin.ignore(); // Vide le tampon d'entrée
+    cin.get();    // Attend une entrée
+
     return 0;
+}
+
+// Définitions des fonctions globales
+
+// Demande à l'utilisateur d'entrer 'o' ou 'n'
+char getYesNo()
+{
+    char response;
+    do {
+        cout << "Entrez 'o' pour oui ou 'n' pour non : ";
+        cin >> response;
+        // Convertir en minuscule pour une meilleure robustesse
+        response = tolower(response);
+    } while (response != 'o' && response != 'n');
+    return response;
+}
+
+// Affiche un message de bienvenue global
+void welcome()
+{
+    cout << "Bienvenue dans le programme global!" << endl;
 }
