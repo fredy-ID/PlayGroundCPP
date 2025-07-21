@@ -2,6 +2,7 @@
 #include <iostream>        // Pour std::cout, std::cin, std::endl
 #include <string>          // Pour std::string
 #include "FunctionsTest.h" // Inclut la déclaration de la classe FunctionsTest
+#include "OperatorsTest.h" // Inclut la déclaration de la classe OperatorsTest
 
 // Utilisation de l'espace de noms std pour simplifier le code
 using namespace std;
@@ -17,15 +18,64 @@ public:
     void afficherHelloWorld() const {
         std::cout << "Hello, World!" << std::endl;
     }
+
+	void mainTestOperators();
+	void mainTestVariableAndFunctions();
 };
 
 int main()
 {
     Main M;
-    FunctionsTest F_test; // Instanciation de la classe FunctionsTest
 
     // Appel de la fonction welcome globale
     welcome();
+
+	M.mainTestOperators();
+
+    return 0;
+}
+
+// Définitions des fonctions globales
+
+// Demande à l'utilisateur d'entrer 'o' ou 'n'
+char getYesNo()
+{
+    char response;
+    do {
+        cout << "Entrez 'o' pour oui ou 'n' pour non : ";
+        cin >> response;
+        // Convertir en minuscule pour une meilleure robustesse
+        response = tolower(response);
+    } while (response != 'o' && response != 'n');
+    return response;
+}
+
+// Affiche un message de bienvenue global
+void welcome()
+{
+    cout << "Bienvenue dans le programme global!" << endl;
+}
+
+
+void Main::mainTestOperators()
+{
+    OperatorsTest O_test;
+
+    O_test.welcome();
+    O_test.test1();
+    O_test.test2();
+
+    cout << "Appuyez sur Entrée pour continuer...";
+    cin.ignore(); // Vide le tampon d'entrée
+    cin.get();    // Attend une entrée
+
+    return;
+}
+
+void Main::mainTestVariableAndFunctions()
+{
+
+    FunctionsTest F_test; // Instanciation de la classe FunctionsTest
 
     // Exemple d'utilisation de FunctionsTest
     int c;
@@ -79,26 +129,5 @@ int main()
     cin.ignore(); // Vide le tampon d'entrée
     cin.get();    // Attend une entrée
 
-    return 0;
-}
-
-// Définitions des fonctions globales
-
-// Demande à l'utilisateur d'entrer 'o' ou 'n'
-char getYesNo()
-{
-    char response;
-    do {
-        cout << "Entrez 'o' pour oui ou 'n' pour non : ";
-        cin >> response;
-        // Convertir en minuscule pour une meilleure robustesse
-        response = tolower(response);
-    } while (response != 'o' && response != 'n');
-    return response;
-}
-
-// Affiche un message de bienvenue global
-void welcome()
-{
-    cout << "Bienvenue dans le programme global!" << endl;
+	return;
 }
